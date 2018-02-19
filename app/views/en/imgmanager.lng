@@ -1,0 +1,2 @@
+global.lng.CODE = 'en';
+global.lng.set('SUREDELETE','Do you want to delete it?');

@@ -1,0 +1,33 @@
+		<div ng-controller="msgController">
+			<p id="pathP">
+				<span ng-repeat="path in paths">
+					<i class="fa fa-caret-right">&nbsp;</i>
+					<a href="#/{{path[0]}}">{{path[1]}}</a>&nbsp;
+				</span>
+			</p>
+			<p id="msgP" ng-show="(msg != '')" class="{{msgClass}}">{{msg}}</p>
+			<div id="msgsDiv" ng-show="(msgs.length > 0)" class="{{msgClass}}">
+			   <ul>
+					<li ng-repeat="msg1 in msgs">{{msg1}}</li>
+			   </ul>
+			</div>
+			<div id="popup" ng-show="popupShow">
+				<p style="text-align:right">
+					<button type="button" ng-click="popupClose()" title="Close">X</button>
+				</p>
+				<div id="popupTxt">{{popupTxt}}</div>
+			</div>
+			<div id="confirm" ng-show="confirmShow">
+				<p style="text-align:right">
+					<button type="button" ng-click="confirmClose()" title="Close">X</button>
+				</p>
+				<div id="confirmTxt">{{confirmTxt}}</div>
+				<center>
+					<button type="button" ng-click="confirmOk()" class="btnOK">
+						<i class="fa fa-check"></i><span>Yes</span></button>
+					<button type="button" ng-click="confirmClose()" class="btnCancel">
+						<i class="fa fa-ban"></i><span>No</span></button>
+				</center>
+			</div>
+		</div>
+

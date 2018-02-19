@@ -1,0 +1,19 @@
+body { padding-top: 50px; }
+
+/* türelmet kéreő ablak */
+#divWorking {position:fixed; z-index:2000; 
+	left:100px; top:100px; width:auto; height:auto;	border-radius:5px;
+	background-color:eadd91; opacity:0.7; padding:5px; margin:0px;
+}
+
+/* popup és confirm */
+#popup {position:absolute; z-index:999; left:100px; top:100px; 
+	width:auto; height:auto; max-width:70%;
+	background-color:silver; padding:10px; 
+	border-style:solid; border-width:1px;}
+#confirm {position:absolute; z-index:999; left:100px; top:100px; 
+	width:auto; height:auto; max-width:70%;
+	background-color:silver; padding:10px; 
+	border-style:solid; border-width:1px;}
+
+

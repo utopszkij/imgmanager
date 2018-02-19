@@ -1,0 +1,79 @@
+<div ng-controller="imgmanagerController" ng-show="imgManagerShow" id="imgManagerBox">
+	<div style="text-align:right">
+		<strong>{{path}}</strong>&nbsp;
+		<var class="btn btn-default" title="Close" ng-click="cancelClick()">X</var>
+	</div>		
+	<div id="fileList">
+		<p>
+			<select id="imgManager_file" size="12" ng-model="imgManagerFile" ng-change="fileChange()">
+				<option ng-repeat="file1 in files" value="{{file1}}" 
+					ng-selected="(imgManagerFile == file1)">{{file1}}
+				</option>
+			</select>
+		</p>
+		<p>
+			<button type="button" ng-show="(imgManagerFile != '')" ng-click="fileDelClick()" 
+				class="btn btn-danger">
+				Delete file
+			</button>
+			<button type="button" ng-show="(files.length == 1)" ng-click="folderDelClick()" 
+				class="btn btn-danger">
+				Delete folder
+			</button>
+		</p>
+	</div>
+	<div id="filePrev" ng-show="(imgUrl != '')">
+		<center>
+			<img id="imgManager_preview" src="{{imgUrl}}" title="{{imgUrl}}" ng-show="(imgUrl != '')" />
+		</center>
+	</div>
+	<div style="clear:both"></div>
+	<p>
+		<label>URL:</label>
+		<input type="text" id="imgManager_url" ng-model="imgUrl" />
+	</p>
+	<p>
+			<label>Size:</label>
+			<input type="text" id="imgManager_width" ng-model="imgManagerWidth" style="width:65px" />
+			&nbsp;X&nbsp;
+			<input type="text" id="imgManager_height" ng-model="imgManagerHeight" style="width:65px" />
+			(px or %)
+	</p>
+	<p>
+		<label>Margin:</label>
+		<input type="text" id="imgManager_margin" ng-model="imgManagerMargin" style="width:65px" />
+		(px or %)
+	</p>
+	<p>
+		<label>Float:</label>
+		<select id="imgManager_align" ng-model="imgManagerAlign">
+			<option value="">None</option>
+			<option value="left">Left</option>
+			<option value="right">Right</option>
+			<option value="center">Center</option>
+		</select>
+	</p>
+	<p style="text-align:right">
+		<button type="text"  class="btn btn-primary" ng-click="okClick()">Insert</button>
+	</p>		
+	<hr />
+	<p>
+		<form id="imgManagerForm" action="./models/imgmanager.php" method="post" 
+			enctype="multipart/form-data" target="imgManagerIfrm">
+			<input type="file" id="imgManager_file" name="imgManager_file" />
+			<input type="hidden" id="imgManager_path" name="imgManager_path" />
+			<button type="button" class="btn btn-default" id="imgManager_upload_btn" ng-click="uploadClick()">
+				Upload
+			</button>
+		</form>
+	</p>
+	<p>
+		<input type="text" id="imgManager_newdir" ng-model="imgManagerNewDir" />
+		<button type="button" class="btn btn-default" id="imgManager_newdir_btn" ng-click="newdirClick()">
+			New folder
+		</button>
+	</p>
+	<div style="display:none">
+		<iframe name="imgManagerIfrm" id="imgManagerIfrm"></iframe> 
+	</div>
+</div>
