@@ -2,6 +2,9 @@
 /**
 * example program for imsmanager
 *
+* note:
+* after the original sorce function for sceditor, img select does not work. 
+* Therefore, they also redefine the source editor.
 */
 // config:
 define('LNG','en');
@@ -97,16 +100,25 @@ define('MODELTIMEOUT',10000);
 		<script type="text/javascript">
 			global.app.controller('myController', function($scope, $http, $timeout){
 				$scope.description = '';
-				// set imgmanager into sceditor' image command
+				// redefine image command
 				$.sceditor.command.set('image', {
 					exec: function() {
+						global.imgManagerScope.imageCommand(this);
+						/*
 						global.imgManagerScope.result = this;
 						global.imgManagerScope.loadFiles();
 						global.imgManagerScope.imgManagerShow = true;
 						global.imgManagerScope.$apply();
-					},
-					tooltip: 'Image insert/edit'
+						*/
+					}
 				});
+				// redefine source command
+				$.sceditor.command.set('source', {
+					exec: function() {
+						global.imgManagerScope.srcEditorCommand(this);
+					}
+				});
+
 				// convert textarea to sceditor
 				global.$('#description').sceditor({
 					plugins: 'xhtml',

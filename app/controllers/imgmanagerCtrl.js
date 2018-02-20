@@ -2,6 +2,8 @@
 /**
 * angularjs controller
 * imgManager for scedit 
+* after the original sorce function for sceditor, img select does not work. 
+* Therefore, they also redefine the source editor.
 */
 global.app.controller('imgmanagerController', function($scope, $http) {
 	$scope.result = {}; // result sceditor 
@@ -155,7 +157,8 @@ global.app.controller('imgmanagerController', function($scope, $http) {
 			}
 			s = s +'" />';
 			if (typeof $scope.result.insert !== "undefined") { 
-				$scope.result.insert(s);
+				// if there are many img in one tag, the sceditor img select wrong.
+				$scope.result.insert('<var>'+s+'</var>');
 			}
 			$scope.imgManagerShow = false;
 		}
@@ -186,9 +189,6 @@ global.app.controller('imgmanagerController', function($scope, $http) {
 	* folderDel click
 	*/
 	$scope.folderDelClick = function() {
-
-console.log(global.lng);
-
 		global.msgScope.confirm($scope.path+' '+global.lng._('SUREDELETE'),function() {
 			global.msgScope.confirmShow = false;
 			var data = {"path": $scope.path};
@@ -239,5 +239,30 @@ console.log(global.lng);
 		}
 	};
 
+	/**
+	* image command function
+	*/
+	$scope.imageCommand = function(result) {
+		$scope.result = result;
+		$scope.loadFiles();
+		$scope.imgManagerShow = true;
+		$scope.$apply();
+	}
+
+	/**
+	* sceditor src editor overwrite
+	*/
+	$scope.srcEditorCommand = function(result) {
+		$scope.result = result;
+		$('#imgManagerSrc').val($scope.result.val());
+		$('#imgManagerSrcEditor').toggle();
+	}
+	$scope.srcEditorClose = function() {
+		$('#imgManagerSrcEditor').toggle();
+	}
+	$scope.srcEditorOk = function() {
+		$scope.result.val($('#imgManagerSrc').val());
+		$('#imgManagerSrcEditor').toggle();
+	}
 	global.imgManagerScope = $scope;
 });

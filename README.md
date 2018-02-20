@@ -2,7 +2,7 @@
 Picture Supplement for JQuery, Angular, Sceditor
 
 ## version
-V 1.01 developer version
+V 1.02 developer version
 ![screen preview](https://raw.githubusercontent.com/utopszkij/imgmanager/master/app/images/kepernyokep.png)
 Includes an example.
 ## Used software items
@@ -27,12 +27,15 @@ GNU/GPL
 ## Author
 Tibor Fogler (Utopszkij)  tibor.fogler@gmail.com
 ## revision history
-V1.01 2018.02.20. process the image mouse resize
+- V1.01 2018.02.20. process the image mouse resize
+- V1.02 2018.02.21. If there are multiple images in a html tag then the sceditor "img" select is not good. That is why "var" enters "img". After using Sceditor's original source editor, img select does not work. That's why we redefine it.
+
+
 
 # imgmanager
 Képkezelő kiegészítés JQuery, Angularjs, sceditor -hoz 
 ## verzió
-V 1.01 fejlesdztés alatt
+V 1.02 fejlesztés alatt
 Példát is tartalmaz.
 ## Használt szoftver elemek
 - AngularJs  https://angularjs.org/
@@ -56,6 +59,6 @@ GNU/GPL
 ## Szerző
 Fogler Tibor (Utopszkij)  tibor.fogler@gmail.com
 ## változás történet
-V1.01 2018.02.20. egérrel történő kép átméretezés kezelése
-
+- V1.01 2018.02.20. egérrel történő kép átméretezés kezelése
+- V1.02 2018.02.20. Ha több kép van egy html tag-ben akkor nem jó az sceditor img select. Ezért "var" -ba kerül az "img". Sceditor eredeti forrás szerkesztő használata után nem müködik az "img" select. Ezért étdefináljuk azt.  
 

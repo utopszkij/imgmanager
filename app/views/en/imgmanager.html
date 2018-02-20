@@ -1,4 +1,5 @@
-<div ng-controller="imgmanagerController" ng-show="imgManagerShow" id="imgManagerBox">
+<div ng-controller="imgmanagerController">
+<div ng-show="imgManagerShow" id="imgManagerBox">
 	<div style="text-align:right">
 		<strong>{{path}}</strong>&nbsp;
 		<var class="btn btn-default" title="Close" ng-click="cancelClick()">X</var>
@@ -73,7 +74,21 @@
 			New folder
 		</button>
 	</p>
+
 	<div style="display:none">
 		<iframe name="imgManagerIfrm" id="imgManagerIfrm"></iframe> 
 	</div>
+</div>
+
+<div id="imgManagerSrcEditor" 
+	style="display:none; position:fixed; z-index:10; left:50px; top:50px; width:auto; height:auto;  padding:5px; background-color:#E0E0E0">
+		<p style="text-align:right">
+			<strong>Source editor</strong>&nbsp;&nbsp;
+			<i class="btn btn-default" ng-click="srcEditorClose()">X</i>
+		</p>
+		<textarea id="imgManagerSrc" cols="80" rows="20"></textarea>
+		<p style="text-align:right">
+			<i class="btn btn-primary" ng-click="srcEditorOk()">OK</i>
+		</p>
+</div>
 </div>
