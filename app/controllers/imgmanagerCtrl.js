@@ -64,6 +64,14 @@ global.app.controller('imgmanagerController', function($scope, $http) {
 						$scope.imgManagerHeight = img.style.height;
 						$scope.imgManagerMargin = img.style.margin;
 						$scope.imgManagerAlign = img.style.float;
+						//+ V1.01 2018.02.20 process mouse resize
+						if (img.width != '') {
+							$scope.imgManagerWidth = img.width+'px';
+						}
+						if (img.height != '') {
+							$scope.imgManagerHeight = img.height+'px';
+						}
+						//+ V1.01 2018.02.20
 					 }
 				 }
 			 }	

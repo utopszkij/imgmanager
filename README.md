@@ -1,7 +1,8 @@
 # imgmanager
-Képkezelő kiegészítés JQuery, Angularjs, sceditor -hoz (Picture Supplement for JQuery, Angular, Sceditor)
+Picture Supplement for JQuery, Angular, Sceditor
+
 ## version
-V 1.00 developer version
+V 1.01 developer version
 ![screen preview](https://raw.githubusercontent.com/utopszkij/imgmanager/master/app/images/kepernyokep.png)
 Includes an example.
 ## Used software items
@@ -25,9 +26,13 @@ Includes an example.
 GNU/GPL
 ## Author
 Tibor Fogler (Utopszkij)  tibor.fogler@gmail.com
+## revision history
+V1.01 2018.02.20. process the image mouse resize
 
-
-
+# imgmanager
+Képkezelő kiegészítés JQuery, Angularjs, sceditor -hoz 
+## verzió
+V 1.01 fejlesdztés alatt
 Példát is tartalmaz.
 ## Használt szoftver elemek
 - AngularJs  https://angularjs.org/
@@ -41,7 +46,7 @@ Példát is tartalmaz.
 - Kép könyvtár és alkönyvtárainak böngészése, kép kiválasztása,
 - Kép előnézet,
 - Kép fájl feltöltése (csak jpg, png, jpeg megngedett),
-- Új alkönyvtár létrehozásar,
+- Új alkönyvtár létrehozása,
 - Fájl törlése,
 - Üres alkönyvtár törlése,
 - img stilusok beállítása: width, heigh, float, margin,
@@ -50,5 +55,7 @@ Példát is tartalmaz.
 GNU/GPL
 ## Szerző
 Fogler Tibor (Utopszkij)  tibor.fogler@gmail.com
+## változás történet
+V1.01 2018.02.20. egérrel történő kép átméretezés kezelése
 
 
